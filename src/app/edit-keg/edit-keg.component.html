@@ -1,0 +1,26 @@
+<div *ngIf="childSelectedKeg">
+  <h3>{{childSelectedKeg.description}}</h3>
+  <p>Keg? {{childSelectedKeg.done}}</p>
+  <h3>Edit Keg</h3>
+  <label>Enter Keg name:</label>
+  <input [(ngModel)]="childSelectedKeg.name">
+  <label>Enter Brewery name:</label>
+  <input [(ngModel)]="childSelectedKeg.brewery">
+  <label>Enter style:</label>
+  <input [(ngModel)]="childSelectedKeg.style">
+  <label>Enter ABV:</label>
+  <input [(ngModel)]="childSelectedKeg.abv">
+  <label>Enter IBU:</label>
+  <input [(ngModel)]="childSelectedKeg.ibu">
+  <label>Enter Price:</label>
+  <input [(ngModel)]="childSelectedKeg.price">
+  <label>Enter Pint Count:</label>
+  <input [(ngModel)]="childSelectedKeg.pintCount">
+  <label>Edit Region:</label>
+  <select>
+    <option type="radio" [(ngModel)]="childSelectedKeg.region" [value]="local"> Local Region </option>
+    <option type="radio" [(ngModel)]="childSelectedKeg.region" [value]="national"> National Region </option>
+    <option type="radio" [(ngModel)]="childSelectedKeg.region" [value]="international"> International Region </option>
+  </select>
+  <button (click)="finishedEditing()">Done</button>
+</div>

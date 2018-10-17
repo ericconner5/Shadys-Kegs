@@ -6,5 +6,6 @@
   <li><h6>{{currentKeg.ibu}}%</h6></li>
   <li><h6>${{currentKeg.price}}</h6></li>
   <li><h6>{{currentKeg.pintCount}}ish pints remaining</h6></li>
-  <button (click)="editKeg(currentKeg)">Edit!</button>
+  <li><h6>{{currentKeg.region}}</h6></li>
+  <button (click)="editButtonClicked(currentKeg)">Edit!</button>
 </ul>

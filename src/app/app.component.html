@@ -5,31 +5,6 @@
 </form> -->
 <h1>Keg List for {{month}}/{{day}}/{{year}}</h1>
 <!-- <h3>{{currentFocus}}</h3> -->
-
-<app-keg-list [childKegList]="masterKegList"></app-keg-list>
-<div *ngIf="selectedKeg">
-  <h3>{{selectedKeg.description}}</h3>
-  <p>Keg? {{selectedKeg.done}}</p>
-  <h3>Edit Keg</h3>
-  <label>Enter Keg name:</label>
-  <input [(ngModel)]="selectedKeg.name">
-  <label>Enter Brewery name:</label>
-  <input [(ngModel)]="selectedKeg.brewery">
-  <label>Enter style:</label>
-  <input [(ngModel)]="selectedKeg.style">
-  <label>Enter ABV:</label>
-  <input [(ngModel)]="selectedKeg.ABV">
-  <label>Enter IBU:</label>
-  <input [(ngModel)]="selectedKeg.IBU">
-  <label>Enter Price:</label>
-  <input [(ngModel)]="selectedKeg.price">
-  <label>Enter Pint Count:</label>
-  <input [(ngModel)]="selectedKeg.pintCount">
-
-  <!-- <label>Enter Keg Priority (1-3):</label>
-  <br> -->
-  <!-- <input type="radio" [(ngModel)]="selectedKeg.priority" [value]="1">1 (Low Priority)<br>
-  <input type="radio" [(ngModel)]="selectedKeg.priority" [value]="2">2 (Medium Priority)<br>
-  <input type="radio" [(ngModel)]="selectedKeg.priority" [value]="3">3 (High Priority) -->
-  <button (click)="finishedEditing()">Done</button>
-</div>
+<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
+<app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
+<app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>

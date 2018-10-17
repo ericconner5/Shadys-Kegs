@@ -1,0 +1,27 @@
+<div>
+  <!-- <h3>{{childSelectedKeg.description}}</h3>
+  <p>Keg? {{childSelectedKeg.done}}</p> -->
+  <h3>Add Keg</h3>
+  <label>Enter Keg name:</label>
+  <input #newName>
+  <label>Enter Brewery name:</label>
+  <input #newBrewery>
+  <label>Enter Style:</label>
+  <input #newStyle>
+  <label>Enter ABV:</label>
+  <input #newAbv><br>
+  <label>Enter IBU:</label>
+  <input #newIbu>
+  <label>Enter Price:</label>
+  <input #newPrice>
+  <label>Enter Pint Count:</label>
+  <input #newPintCount>
+  <label>Region:</label>
+  <select #newRegion>
+    <option [value]="local"> Local Region </option>
+    <option [value]="national"> National Region </option>
+    <option [value]="international"> International Region </option>
+  </select>
+  <button (click)="submitForm(newName.value, newBrewery.value, newStyle.value, newAbv.value, newIbu.value, newPrice.value, newPintCount.value, newRegion.value); resetForm()">Add</button>
+</div>
+<!-- resetform is not working right but it  would be niice if it did -->

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Keg } from '../models/task.model';
 // import { Component, Input } from '@angular/core';
 
@@ -9,7 +9,11 @@ import { Keg } from '../models/task.model';
 })
 export class KegListComponent implements OnInit {
   @Input() childKegList: Keg[];
+  @Output() clickSender = new EventEmitter();
 
+  editButtonClicked(kegToEdit: Keg) {
+    this.clickSender.emit(kegToEdit);
+  }
   constructor() { }
 
   ngOnInit() {
