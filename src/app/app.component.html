@@ -6,7 +6,7 @@
 <h1>Keg List for {{month}}/{{day}}/{{year}}</h1>
 <!-- <h3>{{currentFocus}}</h3> -->
 
-<app-keg-list></app-keg-list>
+<app-keg-list [childKegList]="masterKegList"></app-keg-list>
 <div *ngIf="selectedKeg">
   <h3>{{selectedKeg.description}}</h3>
   <p>Keg? {{selectedKeg.done}}</p>

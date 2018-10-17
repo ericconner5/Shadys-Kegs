@@ -13,9 +13,12 @@ export class AppComponent {
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
   tapRoomName: string = "Shady's Kegs";
-
-
   selectedKeg = null;
+
+  masterKegList: Keg[] = [
+    new Keg('Old Tavern Rat', 'Lompoc', 'Barleywine', 9.7, 95, 8, 120),
+    new Keg('RPM', 'Boneyard', 'IPA', 7.5, 75, 7, 120),
+  ];
 
   finishedEditing() {
     this.selectedKeg = null;

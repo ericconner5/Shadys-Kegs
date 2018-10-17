@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Keg } from '../models/task.model';
+// import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-keg-list',
@@ -7,10 +8,7 @@ import { Keg } from '../models/task.model';
   styleUrls: ['./keg-list.component.css']
 })
 export class KegListComponent implements OnInit {
-  kegs: Keg[] = [
-    new Keg('Old Tavern Rat', 'Lompoc', 'Barleywine', 9.7, 95, 8, 120),
-    new Keg('RPM', 'Boneyard', 'IPA', 7.5, 75, 7, 120),
-  ];
+  @Input() childKegList: Keg[];
 
   constructor() { }
 
