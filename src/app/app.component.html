@@ -5,20 +5,8 @@
 </form> -->
 <h1>Keg List for {{month}}/{{day}}/{{year}}</h1>
 <!-- <h3>{{currentFocus}}</h3> -->
-<ul *ngFor="let currentKeg of kegs" >
-  <li [class]="abvColor(currentKeg)"><h2>{{currentKeg.name}}</h2></li>
-  <li [class]="abvColor(currentKeg)"><h4>From: {{currentKeg.brewery}}</h4></li>
-  <li [class]="abvColor(currentKeg)"><h6>{{currentKeg.style}}</h6></li>
-  <li [class]="abvColor(currentKeg)"><h6>{{currentKeg.abv}}%</h6></li>
-  <li [class]="abvColor(currentKeg)"><h6>{{currentKeg.ibu}}%</h6></li>
-  <li [class]="abvColor(currentKeg)"><h6>${{currentKeg.price}}</h6></li>
-  <li [class]="abvColor(currentKeg)"><h6>{{currentKeg.pintCount}}ish pints remaining</h6></li>
-  <button (click)="editKeg(currentKeg)">Edit!</button>
-</ul>
 
-
-
-
+<app-keg-list></app-keg-list>
 <div *ngIf="selectedKeg">
   <h3>{{selectedKeg.description}}</h3>
   <p>Keg? {{selectedKeg.done}}</p>
@@ -38,10 +26,10 @@
   <label>Enter Pint Count:</label>
   <input [(ngModel)]="selectedKeg.pintCount">
 
-  <!-- <label>Enter Task Priority (1-3):</label>
+  <!-- <label>Enter Keg Priority (1-3):</label>
   <br> -->
-  <!-- <input type="radio" [(ngModel)]="selectedTask.priority" [value]="1">1 (Low Priority)<br>
-  <input type="radio" [(ngModel)]="selectedTask.priority" [value]="2">2 (Medium Priority)<br>
-  <input type="radio" [(ngModel)]="selectedTask.priority" [value]="3">3 (High Priority) -->
+  <!-- <input type="radio" [(ngModel)]="selectedKeg.priority" [value]="1">1 (Low Priority)<br>
+  <input type="radio" [(ngModel)]="selectedKeg.priority" [value]="2">2 (Medium Priority)<br>
+  <input type="radio" [(ngModel)]="selectedKeg.priority" [value]="3">3 (High Priority) -->
   <button (click)="finishedEditing()">Done</button>
 </div>
