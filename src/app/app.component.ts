@@ -15,6 +15,7 @@ export class AppComponent {
   tapRoomName: string = "Shady's Kegs";
   kegs: Keg[] = [
     new Keg('Old Tavern Rat', 'Lompoc', 'Barleywine', 9.7, 95, 8, 120),
+    new Keg('RPM', 'Boneyard', 'IPA', 7.5, 75, 7, 120),
   ];
 
   selectedKeg = null;
@@ -30,7 +31,7 @@ export class AppComponent {
   abvColor(currentKeg){
     if (currentKeg.abv >= 9){
       return "bg-danger";
-    } else if ((currentKeg.abv <= 4) && (currentKeg.abv <= 8)) {
+    } else if ((currentKeg.abv >= 4) && (currentKeg.abv <= 8)) {
       return  "bg-warning";
     } else {
       return "bg-success";
