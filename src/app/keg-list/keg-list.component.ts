@@ -10,6 +10,7 @@ import { Keg } from '../models/task.model';
 export class KegListComponent implements OnInit {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
+  @Output() clickSell = new EventEmitter();
 
   editButtonClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
@@ -18,6 +19,12 @@ export class KegListComponent implements OnInit {
   toggleDone(clickedKeg: Keg, setTapped: boolean) {
     clickedKeg.tapped = setTapped;
   }
+
+  sellSinglePint(kegToSell: Keg){
+    console.log(kegToSell);
+    this.clickSell.emit(kegToSell);
+  }
+
   constructor() { }
 
   ngOnInit() {

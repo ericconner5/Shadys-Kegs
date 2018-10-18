@@ -5,6 +5,10 @@
 </form> -->
 <h1>Keg List for {{month}}/{{day}}/{{year}}</h1>
 <!-- <h3>{{currentFocus}}</h3> -->
-<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
+<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSell)="sellPint($event)"></app-keg-list>
+
 <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
+
+<!-- <app-sell-pint [childKegList]="masterKegList" (sellPint)="soldPint($event)"></app-sell-pint> -->
+
 <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>

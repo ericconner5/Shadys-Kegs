@@ -19,6 +19,7 @@ export class AppComponent {
     new Keg('Old Tavern Rat', 'Lompoc', 'Barleywine', 9.7, 95, 8, 120, 'local'),
     new Keg('RPM', 'Boneyard', 'IPA', 7.5, 75, 7, 120, 'local'),
   ];
+  sellingKeg: boolean;
 
   finishedEditing() {
     this.selectedKeg = null;
@@ -30,5 +31,10 @@ export class AppComponent {
 
   addKeg(newKeg: Keg) {
     this.masterKegList.push(newKeg);
+  }
+
+  sellPint(keg: Keg) {
+    console.log(keg);
+    keg.pintCount --;
   }
 }

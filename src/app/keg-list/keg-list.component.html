@@ -11,4 +11,7 @@
 
   <input *ngIf="currentKeg.tapped === false" type="checkbox" (click)="toggleDone(currentKeg, true)"/>
   <button (click)="editButtonClicked(currentKeg)">Edit!</button>
+  <button (click)="sellSinglePint(currentKeg)">Sell Pint</button>
 </ul>
+
+<!-- (click)="currentKeg.pintCount = (currentKeg.pintCount -1)" -->
