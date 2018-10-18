@@ -1,4 +1,4 @@
-<div>
+<form #addKegForm>
   <!-- <h3>{{childSelectedKeg.description}}</h3>
   <p>Keg? {{childSelectedKeg.done}}</p> -->
   <h3>Add Keg</h3>
@@ -22,6 +22,6 @@
     <option [value]="national"> National Region </option>
     <option [value]="international"> International Region </option>
   </select>
-  <button (click)="submitForm(newName.value, newBrewery.value, newStyle.value, newAbv.value, newIbu.value, newPrice.value, newPintCount.value, newRegion.value); resetForm()">Add</button>
-</div>
+  <button (click)="submitForm(newName.value, newBrewery.value, newStyle.value, newAbv.value, newIbu.value, newPrice.value, newPintCount.value, newRegion.value); addKegForm.reset()">Add</button>
+</form>
 <!-- resetform is not working right but it  would be niice if it did -->

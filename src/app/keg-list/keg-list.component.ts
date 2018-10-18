@@ -14,10 +14,15 @@ export class KegListComponent implements OnInit {
   editButtonClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
+
+  toggleDone(clickedKeg: Keg, setTapped: boolean) {
+    clickedKeg.tapped = setTapped;
+  }
   constructor() { }
 
   ngOnInit() {
   }
+
   abvColor(currentKeg){
     if (currentKeg.abv >= 9){
       return "bg-danger";

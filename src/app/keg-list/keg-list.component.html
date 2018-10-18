@@ -1,11 +1,14 @@
-<ul *ngFor="let currentKeg of childKegList" [class]="abvColor(currentKeg)">
+<ul *ngFor="let currentKeg of childKegList | tapped" [class]="abvColor(currentKeg)">
   <li><h2>{{currentKeg.name}}</h2></li>
   <li><h4>From: {{currentKeg.brewery}}</h4></li>
-  <li><h6>{{currentKeg.style}}</h6></li>
-  <li><h6>{{currentKeg.abv}}%</h6></li>
-  <li><h6>{{currentKeg.ibu}}%</h6></li>
+  <li><h6>Style: {{currentKeg.style}}</h6></li>
+  <li><h6>ABV: {{currentKeg.abv}}%</h6></li>
+  <li><h6>{{currentKeg.ibu}} IBU</h6></li>
   <li><h6>${{currentKeg.price}}</h6></li>
-  <li><h6>{{currentKeg.pintCount}}ish pints remaining</h6></li>
-  <li><h6>{{currentKeg.region}}</h6></li>
+  <li><h6>There are {{currentKeg.pintCount}}ish pints remaining</h6></li>
+  <li><h6>Region: {{currentKeg.region}}</h6></li>
+  <p>Click checkbox to mark empty</p><input *ngIf="currentKeg.tapped === true" type="checkbox" checked (click)="toggleDone(currentKeg, false)"/>
+
+  <input *ngIf="currentKeg.tapped === false" type="checkbox" (click)="toggleDone(currentKeg, true)"/>
   <button (click)="editButtonClicked(currentKeg)">Edit!</button>
 </ul>
