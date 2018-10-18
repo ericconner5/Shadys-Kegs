@@ -12,14 +12,11 @@ export class SellPintComponent implements OnInit {
   @Output() sellPint = new EventEmitter();
 
 
-  sellSinglePint() {
-    console.log(this.childSelectedKeg.pintCount);
-    this.sellPint.emit(this.childSelectedKeg.pintCount --);
-  }
-
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

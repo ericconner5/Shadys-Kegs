@@ -5,7 +5,7 @@
   <li><h6>ABV: {{currentKeg.abv}}%</h6></li>
   <li><h6>{{currentKeg.ibu}} IBU</h6></li>
   <li><h6>${{currentKeg.price}}</h6></li>
-  <li><h6>There are {{currentKeg.pintCount}}ish pints remaining</h6></li>
+  <li><h6 [class]="lowQuantityColor(currentKeg)">There are {{currentKeg.pintCount}}ish pints remaining</h6></li>
   <li><h6>Region: {{currentKeg.region}}</h6></li>
   <p>Click checkbox to mark empty</p><input *ngIf="currentKeg.tapped === true" type="checkbox" checked (click)="toggleDone(currentKeg, false)"/>
 

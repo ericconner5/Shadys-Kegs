@@ -17,7 +17,7 @@ export class AppComponent {
 
   masterKegList: Keg[] = [
     new Keg('Old Tavern Rat', 'Lompoc', 'Barleywine', 9.7, 95, 8, 120, 'local'),
-    new Keg('RPM', 'Boneyard', 'IPA', 7.5, 75, 7, 120, 'local'),
+    new Keg('RPM', 'Boneyard', 'IPA', 7.5, 75, 7, 11, 'local'),
   ];
   sellingKeg: boolean;
 

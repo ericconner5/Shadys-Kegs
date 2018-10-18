@@ -39,4 +39,10 @@ export class KegListComponent implements OnInit {
       return "bg-success";
     }
   }
+
+  lowQuantityColor(currentKeg) {
+    if (currentKeg.pintCount <= 10) {
+      return "bg-info";
+    }
+  }
 }
